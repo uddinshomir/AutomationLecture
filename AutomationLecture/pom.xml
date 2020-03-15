@@ -35,6 +35,12 @@
 	</build>
 
 	<dependencies>
+		<!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>3.8.1</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -49,7 +55,7 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.1.0</version>
-			<scope>test</scope>
+			<scope>compile</scope>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
@@ -60,12 +66,24 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
-		<dependency>
+
+		<!--<dependency>
+			<groupId>com.vimalselvam</groupId>
+			<artifactId>cucumber-extentsreport</artifactId>
+			<version>3.1.1</version>
+		</dependency>-->
+
+		<!--<dependency>
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
-			<version>4.1.3</version>
-		</dependency>
+			<version>3.1.1</version>
+		</dependency>-->
 
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports-cucumber4-adapter</artifactId>
+			<version>1.0.10</version>
+		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
 		<dependency>
@@ -89,23 +107,6 @@
 			<artifactId>cucumber-picocontainer</artifactId>
 			<version>4.1.1</version>
 			<scope>test</scope>
-		</dependency>
-
-
-		<dependency>
-			<groupId>com.aventstack</groupId>
-			<artifactId>extentreports-cucumber4-adapter</artifactId>
-			<version>1.0.8</version>
-			<exclusions>
-				<exclusion>
-					<groupId>io.cucumber</groupId>
-					<artifactId>cucumber-java</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>io.cucumber</groupId>
-					<artifactId>cucumber-core</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 
 	</dependencies>
