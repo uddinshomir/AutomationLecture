@@ -1,5 +1,6 @@
 package com.selenium;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,13 +11,14 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class TestngGCR {
-	
 	WebDriver driver;
 	GCRPageFactory pf;
 	
 	@BeforeTest
 	public void openBrowser() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Uddin\\eclipse-workspace\\AutomationLecture\\src\\main\\resources\\driver\\chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
+//		String localDir = System.getProperty("user.dir");
+//		System.setProperty("webdriver.chrome.driver", localDir +"\\driver\\chromedriver.exe");
 	    driver = new ChromeDriver();
 		pf = PageFactory.initElements(driver, GCRPageFactory.class); 
 		driver.manage().window().maximize();
